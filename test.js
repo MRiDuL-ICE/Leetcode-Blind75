@@ -1,23 +1,12 @@
-function productExceptSelf(nums) {
-  let n = nums.length;
-  let answer = new Array(n).fill(1);
+// {
+//   // flatmap
+//   const myArr = [1, 2, 3, 4, 5, 6];
+//   const newArr = myArr.flatMap((x) => [x, x * 10]);
+//   console.log(newArr);
+// }
 
-  // Compute prefix product
-  let prefix = 1;
-  for (let i = 0; i < n; i++) {
-    answer[i] = prefix;
-    prefix *= nums[i];
-  }
-
-  // Compute suffix product and multiply with prefix product
-  let suffix = 1;
-  for (let i = n - 1; i >= 0; i--) {
-    answer[i] *= suffix;
-    suffix *= nums[i];
-  }
-
-  return answer;
+{
+  const fruits = ["Banana", "Orange", "Apple", "Mango"];
+  console.log(fruits.toSorted());
+  console.log(fruits);
 }
-
-// Example usage
-console.log(productExceptSelf([-1, 1, 0, -3, 3])); // Output: [24, 12, 8, 6]
